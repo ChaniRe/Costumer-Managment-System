@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    </title>
+
+
+</head>
+
+<body>
+    <header>
+        <br />
+        <h1 class="welcome_h1">
+            ברוכים הבאים למערכת ניהול קורונה של קופת החולים
+            <span>
+                בריאות
+            </span>
+        </h1>
+        <button class="add_new_friend" onclick="openPopup()">
+            להוספת חבר חדש
+        </button>
+    </header>
+    <div id="add_new_friend_form" class="add_new_friend_form_container hide">
+        <form id="friendForm" onsubmit="submitForm(event)" dir="rtl">
+            <button type="button" id="close_add_new_friend" class="close_button" onclick="closePopup()">X</button>
+            <fieldset>
+                <legend>פרטים אישיים:</legend>
+                <div>
+                    <label for="name">
+                        שם פרטי:
+                    </label>
+                    <input type="text" id="name1" name="name1" required>
+                </div>
+                <div>
+                    <label for="name">
+                        שם משפחה:
+                    </label>
+                    <input type="text" id="name2" name="name2" required>
+                </div>
+                <div>
+                    <label for="id">
+                        תעודת זהות:
+                    </label>
+                    <input type="text" id="id" name="id" required>
+                </div>
+                <div>
+                    <label for="address1">
+                        עיר מגורים:
+                    </label>
+                    <input type="text" id="address1" name="address1" required>
+                </div>
+                <div>
+                    <label for="address2">
+                        רחוב:
+                    </label>
+                    <input type="text" id="address2" name="address2" required>
+                    <label for="address3">
+                        מספר בית:
+                    </label>
+                    <input type="number" id="address3" name="address3" min="0" max="10000" required>
+                </div>
+                <div>
+                    <label for="birthdate">
+                        תאריך לידה:
+                    </label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                <div>
+                    <label for="phone">
+                        טלפון:
+                    </label>
+                    <input type="number" id="phone" name="phone" required>
+                </div>
+                <div>
+                    <label for="mobile">
+                        טלפון נייד:
+                    </label>
+                    <input type="number" id="mobile" name="mobile" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>פרטים בנושא הקורונה:</legend>
+                <div>
+                    <label for="vaccine1_date">
+                        מועד קבלת חיסון 1:
+                    </label>
+                    <input type="date" id="vaccine1_date" name="vaccine1_date">
+                    <br />
+                    <label for="vaccine1_manufacturer">יצרן החיסון:</label>
+                    <input type="text" id="vaccine1_manufacturer" name="vaccine1_manufacturer">
+                </div>
+                <br />
+                <div>
+                    <label for="vaccine2_date">
+                        מועד קבלת חיסון 2:
+                    </label>
+                    <input type="date" id="vaccine2_date" name="vaccine2_date">
+                    <br />
+                    <label for="vaccine2_manufacturer">יצרן החיסון:</label>
+                    <input type="text" id="vaccine2_manufacturer" name="vaccine2_manufacturer">
+                </div>
+                <br />
+                <div>
+                    <label for="vaccine1_date">
+                        מועד קבלת חיסון 3:
+                    </label>
+                    <input type="date" id="vaccine1_date" name="vaccine1_date">
+                    <br />
+                    <label for="vaccine1_manufacturer">יצרן החיסון:</label>
+                    <input type="text" id="vaccine1_manufacturer" name="vaccine1_manufacturer">
+                </div>
+                <br />
+                <div>
+                    <label for="vaccine2_date">
+                        מועד קבלת חיסון 4:
+                    </label>
+                    <input type="date" id="vaccine2_date" name="vaccine2_date">
+                    <br />
+                    <label for="vaccine2_manufacturer">יצרן החיסון:</label>
+                    <input type="text" id="vaccine2_manufacturer" name="vaccine2_manufacturer">
+                </div>
+                <br />
+
+                <div>
+                    <label for="positive_date">מועד קבלת תוצאה חיובית:</label>
+                    <input type="date" id="positive_date" name="positive_date">
+                    <br />
+                    <label for="recovery_date">מועד החלמה:</label>
+
+                    <input type="date" id="recovery_date" name="recovery_date">
+                </div>
+            </fieldset>
+
+            <button type="submit" id="sumbit_button" class="">הוספה</button>
+
+        </form>
+    </div>
+    <div class="container" dir="rtl">
+        <h2>חברים קיימים</h2>
+        <table id="friendTable">
+            <thead>
+                <tr>
+                    <th>תעודת זהות</th>
+                    <th>שם פרטי</th>
+                    <th>שם משפחה</th>
+                    <th>פרטים נוספים</th>
+                </tr>
+            </thead>
+            <tbody dir="rtl">
+                <!-- Friend data rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
